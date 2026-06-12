@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Performance Optimization -->
+  <title>Asif | Graphic Designer & Creative Learner</title>
+  <meta name="description" content="Welcome to the premium interactive portfolio of Asif, a Graphic Designer and Creative Learner specializing in branding, logo designs, and digital visual experiences.">
+  <meta name="keywords" content="Asif, Graphic Designer, Portfolio, Creative Learner, Branding, Logo Design, Web UI, Motion Graphics">
+  <meta name="author" content="Asif">
+  <link rel="canonical" href="https://asif.portfolio/">
+  
+  <!-- Preconnect & DNS Prefetch for Speed -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Particles Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+
+  <!-- Ambient Glow Center (Mouse Follower) -->
+  <div class="glow-effect" id="mouse-glow"></div>
+
+  <!-- ==========================================
+       HEADER & NAVIGATION
+       ========================================== -->
+  <header>
+    <a href="#" class="logo">
+      <span class="gradient-text">&Lambda;</span>ASIF
+    </a>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <div class="title-line-wrap"><div class="title-line">Hi, I'm <span class="gradient-text">Asif</span><span class="red-dot"></span></div></div>
+        <div class="title-line-wrap"><div class="title-line"><span class="gradient-text-alt">Graphic Designer</span> &amp;</div></div>
+        <div class="title-line-wrap"><div class="title-line">Creative Learner</div></div>
+      </h1>
+      <p class="hero-desc">
+        Shaping brand identities and digital assets with modern creative tools. Crafting visual stories while constantly discovering new technologies.
+      </p>
+      <div class="hero-btns">
+        <a href="#skills" class="btn btn-primary">
+          Explore Skills <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Floating Graphic elements -->
+    <div class="hero-visual" id="hero-interactive">
+      <div class="floating-mesh"></div>
+      
+      <!-- Interactive Element 1: Photoshop Card Wrapper -->
+      <div class="de-wrapper dew-1" data-speed="2">
+        <div class="design-element de-1 glass-panel">
+          <div class="de-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div style="font-size: 0.8rem; font-weight: 600; margin-top: 8px;">Creative</div>
+        </div>
+      </div>
+      
+      <!-- Interactive Element 2: Figma Card Wrapper -->
+      <div class="de-wrapper dew-2" data-speed="-1.5">
+        <div class="design-element de-2 glass-panel">
+          <div class="de-icon"><i class="fa-solid fa-pen-nib"></i></div>
+          <div style="font-size: 0.8rem; font-weight: 600; margin-top: 8px;">Vectors</div>
+        </div>
+      </div>
+      
+      <!-- Interactive Element 3: Resolve Circle Wrapper -->
+      <div class="de-wrapper dew-3" data-speed="1.2">
+        <div class="design-element de-3 glass-panel">
+          <div class="de-icon"><i class="fa-solid fa-film"></i></div>
+          <div style="font-size: 0.8rem; font-weight: 600; margin-top: 6px;">Motion VFX</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SCROLLING TEXT TICKER (MARQUEE)
+       ========================================== -->
+  <div class="marquee-container">
+    <div class="marquee-wrapper">
+      <div class="marquee-content">
+        <span>Graphic Design</span> <span class="divider">•</span>
+        <span>Creative Learning</span> <span class="divider">•</span>
+        <span>Branding</span> <span class="divider">•</span>
+        <span>Logo Design</span> <span class="divider">•</span>
+        <span>UI/UX Concepts</span> <span class="divider">•</span>
+        <span>Motion Graphics</span> <span class="divider">•</span>
+        <span>Adobe Toolsuite</span> <span class="divider">•</span>
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span>Graphic Design</span> <span class="divider">•</span>
+        <span>Creative Learning</span> <span class="divider">•</span>
+        <span>Branding</span> <span class="divider">•</span>
+        <span>Logo Design</span> <span class="divider">•</span>
+        <span>UI/UX Concepts</span> <span class="divider">•</span>
+        <span>Motion Graphics</span> <span class="divider">•</span>
+        <span>Adobe Toolsuite</span> <span class="divider">•</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       ABOUT SECTION
+       ========================================== -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-info">
+        <div class="section-tag">Who I Am</div>
+        <h2 class="section-title">Driven by Design, Inspired by Learning<span class="red-dot"></span></h2>
+        <p class="about-text">
+          I'm <strong>Asif</strong>, a passionate graphic designer currently learning and improving my skills in industry-standard creative tools. I enjoy creating visual designs, branding materials, social media graphics, and digital experiences.
+        </p>
+        <p class="about-tagline">
+          "Design is not just what it looks like and feels like. Design is how it works and how it connects with human curiosity."
+        </p>
+        <div class="hero-btns" style="margin-top: 10px;">
+          <a href="#skills" class="btn btn-secondary">Explore Skills</a>
+        </div>
+      </div>
+      
+      <div class="about-visual">
+        <div class="glass-panel about-visual-card">
+          <div class="badge-3d">
+            <i class="fa-solid fa-cubes"></i>
+          </div>
+          <h3 style="font-family: var(--font-display); font-size: 1.4rem;">Always Innovating</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 300px;">
+            Merging clean aesthetic structures with futuristic visual technologies to solve brand challenges.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SKILLS SECTION
+       ========================================== -->
+  <section id="skills">
+    <div class="section-title-wrapper">
+      <div class="section-tag">Creative Arsenal</div>
+      <h2 class="section-title">Software &amp; Technologies<span class="red-dot"></span></h2>
+    </div>
+
+    <div class="skills-grid">
+      <!-- Photoshop -->
+      <div class="glass-panel skill-card">
+        <div class="skill-logo-wrap">
+          <span class="brand-photoshop" style="font-weight: 800; font-family: var(--font-display); letter-spacing: -2px;">Ps</span>
+        </div>
+        <div class="skill-info">
+          <span class="skill-name">Adobe Photoshop</span>
+          <span class="skill-status" style="border-color: var(--accent-blue); color: var(--accent-blue);">Advanced</span>
+        </div>
+      </div>
+
+      <!-- CorelDRAW -->
+      <div class="glass-panel skill-card">
+        <div class="skill-logo-wrap">
+          <svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 2C16.5 2 4 14.5 4 30C4 41.5 11.5 51.5 22 55.5V62H42V55.5C52.5 51.5 60 41.5 60 30C60 14.5 47.5 2 32 2Z" fill="url(#corel-grad)" />
+            <path d="M32 2V55.5" stroke="#fff" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.5" />
+            <defs>
+              <linearGradient id="corel-grad" x1="0" y1="0" x2="64" y2="64">
+                <stop offset="0%" stop-color="#7bf1a8"/>
+                <stop offset="100%" stop-color="#057a37"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="skill-info">
+          <span class="skill-name">CorelDRAW</span>
+          <span class="skill-status">Proficient</span>
+        </div>
+      </div>
+
+      <!-- DaVinci Resolve -->
+      <div class="glass-panel skill-card">
+        <div class="skill-logo-wrap">
+          <svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="28" stroke="rgba(255,255,255,0.05)" stroke-width="2" />
+            <path d="M32 4C38 4 48 10 44 22C40 34 26 30 20 20C14 10 26 4 32 4Z" fill="#ff3b30" opacity="0.85" />
+            <path d="M52 42C48 48 38 52 28 44C18 36 24 22 36 20C48 18 56 36 52 42Z" fill="#4cd964" opacity="0.85" />
+            <path d="M14 38C10 32 12 20 24 22C36 24 34 38 24 44C14 50 18 44 14 38Z" fill="#007aff" opacity="0.85" />
+          </svg>
+        </div>
+        <div class="skill-info">
+          <span class="skill-name">DaVinci Resolve</span>
+          <span class="skill-status">Learning</span>
+        </div>
+      </div>
+
+      <!-- After Effects -->
+      <div class="glass-panel skill-card">
+        <div class="skill-logo-wrap">
+          <span class="brand-aftereffects" style="font-weight: 800; font-family: var(--font-display); letter-spacing: -2px;">Ae</span>
+        </div>
+        <div class="skill-info">
+          <span class="skill-name">Adobe After Effects</span>
+          <span class="skill-status">Learning</span>
+        </div>
+      </div>
+
+      <!-- Affinity Designer -->
+      <div class="glass-panel skill-card">
+        <div class="skill-logo-wrap">
+          <svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 6L58 52H6L32 6Z" fill="url(#affinity-grad)" />
+            <path d="M32 6L45 29L32 40L19 29L32 6Z" fill="rgba(255,255,255,0.15)" />
+            <defs>
+              <linearGradient id="affinity-grad" x1="0" y1="0" x2="64" y2="64">
+                <stop offset="0%" stop-color="#00d2ff"/>
+                <stop offset="50%" stop-color="#0066ff"/>
+                <stop offset="100%" stop-color="#7b00ff"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="skill-info">
+          <span class="skill-name">Affinity Designer</span>
+          <span class="skill-status">Proficient</span>
+        </div>
+      </div>
+
+      <!-- Canva -->
+      <div class="glass-panel skill-card">
+        <div class="skill-logo-wrap">
+          <span class="brand-canva" style="font-weight: 800; font-size: 1.1rem; letter-spacing: -0.5px;">Canva</span>
+        </div>
+        <div class="skill-info">
+          <span class="skill-name">Canva</span>
+          <span class="skill-status">Mastered</span>
+        </div>
+      </div>
+
+      <!-- Figma -->
+      <div class="glass-panel skill-card">
+        <div class="skill-logo-wrap">
+          <svg width="24" height="36" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30 0h30v60H30a30 30 0 0 1 0-60z" fill="#F24E1E"/>
+            <path d="M90 0a30 30 0 0 1 0 60H60V0h30z" fill="#FF7262"/>
+            <path d="M30 60h30v60H30a30 30 0 0 1 0-60z" fill="#A259FF"/>
+            <path d="M60 60a30 30 0 0 1 30 30a30 30 0 0 1-30 30V60z" fill="#1ABC9C"/>
+            <path d="M30 120a30 30 0 0 1 30 30a30 30 0 0 1-30 30a30 30 0 0 1-30-30a30 30 0 0 1 30-30z" fill="#19B5FE"/>
+          </svg>
+        </div>
+        <div class="skill-info">
+          <span class="skill-name">Figma</span>
+          <span class="skill-status">Proficient</span>
+        </div>
+      </div>
+
+      <!-- Google Stitch -->
+      <div class="glass-panel skill-card">
+        <div class="skill-logo-wrap">
+          <svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 16C24 16 24 48 32 48C40 48 40 16 48 16" stroke="#4285F4" stroke-width="6" stroke-linecap="round" fill="none" />
+            <path d="M16 48C24 48 24 16 32 16C40 16 40 48 48 48" stroke="#EA4335" stroke-width="6" stroke-linecap="round" fill="none" />
+            <circle cx="32" cy="16" r="5" fill="#FBBC05" />
+            <circle cx="32" cy="48" r="5" fill="#34A853" />
+          </svg>
+        </div>
+        <div class="skill-info">
+          <span class="skill-name">Google Stitch</span>
+          <span class="skill-status">Learning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SERVICES SECTION
+       ========================================== -->
+  <section id="services">
+    <div class="section-title-wrapper">
+      <div class="section-tag">Services</div>
+      <h2 class="section-title">What I Offer<span class="red-dot"></span></h2>
+    </div>
+
+    <div class="services-grid">
+      <!-- Service 1: Graphic Design -->
+      <div class="glass-panel service-card">
+        <div class="service-icon-wrap"><i class="fa-solid fa-swatchbook"></i></div>
+        <h3 class="service-title">Graphic Design</h3>
+        <p class="service-desc">Tailored print layout assets, catalog layouts, digital illustrations, and artistic presentations configured with precision.</p>
+      </div>
+
+      <!-- Service 2: Logo Design -->
+      <div class="glass-panel service-card">
+        <div class="service-icon-wrap"><i class="fa-solid fa-pen-nib"></i></div>
+        <h3 class="service-title">Logo Design</h3>
+        <p class="service-desc">Timeless vector marks representing brand visions. Built to look distinct across digital and physical dimensions.</p>
+      </div>
+
+      <!-- Service 3: Social Media Design -->
+      <div class="glass-panel service-card">
+        <div class="service-icon-wrap"><i class="fa-solid fa-share-nodes"></i></div>
+        <h3 class="service-title">Social Media Design</h3>
+        <p class="service-desc">Engaging social media templates, cover cards, and highlight post templates matching your brand aesthetics.</p>
+      </div>
+
+      <!-- Service 4: Poster Design -->
+      <div class="glass-panel service-card">
+        <div class="service-icon-wrap"><i class="fa-solid fa-photo-film"></i></div>
+        <h3 class="service-title">Poster Design</h3>
+        <p class="service-desc">Creative event posters, corporate advertisements, and catalog covers blending beautiful layouts with custom illustrations.</p>
+      </div>
+
+      <!-- Service 5: Branding -->
+      <div class="glass-panel service-card">
+        <div class="service-icon-wrap"><i class="fa-solid fa-briefcase"></i></div>
+        <h3 class="service-title">Branding</h3>
+        <p class="service-desc">Consistent design identity guides, including tailored color systems, font palettes, and stationary suites.</p>
+      </div>
+
+      <!-- Service 6: UI/UX Design -->
+      <div class="glass-panel service-card">
+        <div class="service-icon-wrap"><i class="fa-solid fa-mobile-screen-button"></i></div>
+        <h3 class="service-title">UI/UX Design</h3>
+        <p class="service-desc">Clean mobile app screen designs, digital structures, user wireframes, and intuitive flow prototypes using Figma.</p>
+      </div>
+
+      <!-- Service 7: Motion Graphics -->
+      <div class="glass-panel service-card">
+        <div class="service-icon-wrap"><i class="fa-solid fa-video"></i></div>
+        <h3 class="service-title">Motion Graphics</h3>
+        <p class="service-desc">Dynamic text transitions, video intros, promotional clip cutouts, and kinetic vector animations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       STATISTICS SECTION
+       ========================================== -->
+  <section id="statistics">
+    <div class="stats-grid">
+      <!-- Stat 1 -->
+      <div class="glass-panel stat-card">
+        <span class="stat-number gradient-text" data-target="48">0</span>
+        <span class="stat-label">Design Projects</span>
+      </div>
+
+      <!-- Stat 2 -->
+      <div class="glass-panel stat-card">
+        <span class="stat-number gradient-text-alt" data-target="320">0</span>
+        <span class="stat-label">Learning Hours</span>
+      </div>
+
+      <!-- Stat 3 -->
+      <div class="glass-panel stat-card">
+        <span class="stat-number gradient-text" data-target="6">0</span>
+        <span class="stat-label">Tools Mastered</span>
+      </div>
+
+      <!-- Stat 4 -->
+      <div class="glass-panel stat-card">
+        <span class="stat-number gradient-text-alt" data-target="15">0</span>
+        <span class="stat-label">Happy Clients</span>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h4><span class="gradient-text">&Lambda;</span>ASIF</h4>
+        <p>Graphic Designer | Creative Learner</p>
+      </div>
+      <div class="footer-credits">
+        Designed &amp; Developed by <span>Asif</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Asif. All Rights Reserved.</p>
+      <p>Continuous Improvement through Practice</p>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       ANIMATION & BEHAVIOR SCRIPTS
+       ========================================== -->
+  <!-- GSAP Core and ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  
+  <!-- Custom Application Logic -->
+  <script src="app.js" defer></script>
+</body>
+</html>
