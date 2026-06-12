@@ -417,12 +417,12 @@ function initCleanUrls() {
 async function initIpBasedColorTheme() {
   let ip = "";
   try {
-    const response = await fetch('https://api.ipify.org?format=json');
+    // Add cache-busting to ensure we always get the fresh IP when testing different networks
+    const response = await fetch('https://api.ipify.org?format=json&t=' + Date.now(), { cache: "no-store" });
     const data = await response.json();
     ip = data.ip;
   } catch (err) {
-    console.warn("IP fetch blocked, using local fallback fingerpint.");
-    // Fallback to local storage persistent ID if fetch is blocked
+    console.warn("IP fetch blocked, using local fallback fingerprint.");
     ip = localStorage.getItem("theme_fingerprint");
     if (!ip) {
       ip = Math.random().toString(36).substring(2, 15);
@@ -430,42 +430,34 @@ async function initIpBasedColorTheme() {
     }
   }
 
-  // Simple hash function for IP
+  // Deterministic hash based on IP string
   let hash = 0;
   for (let i = 0; i < ip.length; i++) {
     hash = ip.charCodeAt(i) + ((hash << 5) - hash);
   }
   
-  // Generate colors based on hash
+  // Map hash to a 360-degree Hue. This guarantees the color is always 100% vibrant
+  // and never produces ugly dark/muddy colors or pure white/black like raw RGB math could.
+  const hue1 = Math.abs(hash) % 360;
+  const hue2 = (hue1 + 45) % 360;  // Analogous color for smooth gradients
+  const hue3 = (hue1 + 130) % 360; // Triadic color for contrasting gradients
+
+  const color1 = `hsl(${hue1}, 100%, 55%)`;
+  const color2 = `hsl(${hue2}, 100%, 55%)`;
+  const color3 = `hsl(${hue3}, 100%, 55%)`;
+
   const rootStyle = document.documentElement.style;
   
-  // Use bitwise AND to get valid RGB values from the hash
-  const r1 = Math.abs((hash & 0xFF0000) >> 16);
-  const g1 = Math.abs((hash & 0x00FF00) >> 8);
-  const b1 = Math.abs(hash & 0x0000FF);
+  // Apply to primary accents. DO NOT override --accent-white to prevent text from becoming unreadable.
+  rootStyle.setProperty("--accent-red", color1);
+  rootStyle.setProperty("--accent-blue", color2);
+  rootStyle.setProperty("--glass-border", `hsla(${hue1}, 100%, 55%, 0.2)`);
+  rootStyle.setProperty("--glass-border-glow", `hsla(${hue1}, 100%, 55%, 0.4)`);
   
-  // Generate related colors for gradients
-  const r2 = (r1 + 100) % 255;
-  const g2 = (g1 + 50) % 255;
-  const b2 = (b1 + 150) % 255;
-
-  const r3 = (r1 + 200) % 255;
-  const g3 = (g1 + 150) % 255;
-  const b3 = (b1 + 50) % 255;
-
-  const rgb1 = `rgb(${r1}, ${g1}, ${b1})`;
-  const rgb2 = `rgb(${r2}, ${g2}, ${b2})`;
-  const rgb3 = `rgb(${r3}, ${g3}, ${b3})`;
-
-  // Apply colors to CSS variables
-  rootStyle.setProperty("--accent-red", rgb1);
-  rootStyle.setProperty("--accent-white", rgb2);
-  rootStyle.setProperty("--glass-border", `rgba(${r1}, ${g1}, ${b1}, 0.3)`);
-  rootStyle.setProperty("--glass-border-glow", `rgba(${r1}, ${g1}, ${b1}, 0.5)`);
+  // Beautiful vibrant gradients
+  rootStyle.setProperty("--grad-cyan-blue", `linear-gradient(135deg, ${color1} 0%, ${color2} 100%)`);
+  rootStyle.setProperty("--grad-purple-cyan", `linear-gradient(135deg, ${color2} 0%, ${color3} 100%)`);
+  rootStyle.setProperty("--grad-full", `linear-gradient(135deg, ${color1} 0%, ${color2} 50%, ${color3} 100%)`);
   
-  rootStyle.setProperty("--grad-cyan-blue", `linear-gradient(135deg, ${rgb1} 0%, ${rgb2} 100%)`);
-  rootStyle.setProperty("--grad-purple-cyan", `linear-gradient(135deg, ${rgb2} 0%, ${rgb3} 100%)`);
-  rootStyle.setProperty("--grad-full", `linear-gradient(135deg, ${rgb1} 0%, ${rgb2} 50%, ${rgb3} 100%)`);
-  
-  console.log("Personalized theme applied based on identifier: " + ip);
+  console.log("Personalized theme applied based on IP: " + ip);
 }
